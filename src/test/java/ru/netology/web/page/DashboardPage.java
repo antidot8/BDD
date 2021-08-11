@@ -12,15 +12,15 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class DashboardPage {
-  private SelenideElement heading = $(withText("Ваши карты"));
-  private SelenideElement buttonReload = $("[data-test-id=\"action-reload\"]");
-  private ElementsCollection cards = $$(".list__item");
-  private final String balanceStart = ", баланс: ";
-  private final String balanceFinish = " р.";
-  private final String cardIdStart = "[data-test-id=\"";
-  private final String cardIdFinish = "\"]";
+  private final SelenideElement buttonReload = $("[data-test-id=\"action-reload\"]");
+  private static final ElementsCollection cards = $$(".list__item");
+  private static final String balanceStart = ", баланс: ";
+  private static final String balanceFinish = " р.";
+  private static final String cardIdStart = "[data-test-id=\"";
+  private static final String cardIdFinish = "\"]";
 
   public DashboardPage() {
+    SelenideElement heading = $(withText("Ваши карты"));
     heading.shouldBe(visible);
   }
 

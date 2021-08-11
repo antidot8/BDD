@@ -9,13 +9,13 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TransferPage {
-  private SelenideElement heading = $(withText("Пополнение карты"));
-  private SelenideElement amountInput = $("[data-test-id=amount] input");
-  private SelenideElement cardFrom = $("[data-test-id=from] input");
-  private SelenideElement transferButton = $("[data-test-id=action-transfer]");
+  private final SelenideElement amountInput = $("[data-test-id=amount] input");
+  private final SelenideElement cardFrom = $("[data-test-id=from] input");
+  private final SelenideElement transferButton = $("[data-test-id=action-transfer]");
   public SelenideElement wrongAmount = $("[data-test-id=error-notification]");
 
   public TransferPage() {
+    SelenideElement heading = $(withText("Пополнение карты"));
     heading.shouldBe(visible);
   }
 
